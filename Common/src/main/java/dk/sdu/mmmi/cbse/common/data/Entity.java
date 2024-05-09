@@ -11,6 +11,9 @@ public class Entity implements Serializable {
     private double x;
     private double y;
     private double rotation;
+    private double[] target = new double[2];
+    private int shootCounter;
+    private double size;
             
 
     public String getID() {
@@ -25,7 +28,27 @@ public class Entity implements Serializable {
     public double[] getPolygonCoordinates() {
         return polygonCoordinates;
     }
-       
+
+    public double[] getTarget() { return target; }
+
+    public void setTarget(double X, double Y) {
+        this.target[0] = X;
+        this.target[1] = Y;
+    }
+
+    public int getShootCounter() {return shootCounter;}
+
+    public void setShootCounter(int shootCounter) {
+        this.shootCounter = shootCounter;
+    }
+
+    public void setSize(double size) {
+        this.size = size;
+    }
+
+    public double getSize() {
+        return size;
+    }
 
     public void setX(double x) {
         this.x =x;
