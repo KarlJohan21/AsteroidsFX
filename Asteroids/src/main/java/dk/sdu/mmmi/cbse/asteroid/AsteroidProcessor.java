@@ -36,17 +36,11 @@ public class AsteroidProcessor implements IEntityProcessingService {
             if (asteroid.getY() > gameData.getDisplayHeight()) {
                 asteroid.setY(asteroid.getY() % gameData.getDisplayHeight());
             }
+            if (!asteroid.isAlive()) {
+                asteroidSplitter.createSplitAsteroid(asteroid, world);
+                world.removeEntity(asteroid);
+            }
         }
 
     }
-
-    public void setAsteroidSplitter(IAsteroidSplitter asteroidSplitter) {
-        this.asteroidSplitter = asteroidSplitter;
-    }
-
-    public void removeAsteroidSplitter(IAsteroidSplitter asteroidSplitter) {
-        this.asteroidSplitter = null;
-    }
-
-
 }

@@ -52,6 +52,10 @@ public class EnemyProcessor implements IEntityProcessingService {
                 );
                 enemy.setShootCounter(100);
             }
+
+            if (!enemy.isAlive()) {
+                world.removeEntity(enemy);
+            }
         }
     }
 

@@ -17,6 +17,10 @@ public class BulletControlSystem implements IEntityProcessingService, BulletSPI 
             double changeY = Math.sin(Math.toRadians(bullet.getRotation()));
             bullet.setX(bullet.getX() + changeX * 2);
             bullet.setY(bullet.getY() + changeY * 2);
+
+            if (!bullet.isAlive()) {
+                world.removeEntity(bullet);
+            }
         }
     }
 
