@@ -14,6 +14,9 @@ public class Entity implements Serializable {
     private double[] target = new double[2];
     private int shootCounter;
     private double size;
+    private double radius;
+    private boolean isAlive;
+    private Object parent = null;
             
 
     public String getID() {
@@ -36,6 +39,22 @@ public class Entity implements Serializable {
         this.target[1] = Y;
     }
 
+    public void setAlive(boolean alive) {
+        isAlive = alive;
+    }
+
+    public boolean isAlive() {
+        return isAlive;
+    }
+
+    public void setParent(Object parent) {
+        this.parent = parent;
+    }
+
+    public Object getParent() {
+        return parent;
+    }
+
     public int getShootCounter() {return shootCounter;}
 
     public void setShootCounter(int shootCounter) {
@@ -48,6 +67,14 @@ public class Entity implements Serializable {
 
     public double getSize() {
         return size;
+    }
+
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+
+    public double getRadius() {
+        return radius;
     }
 
     public void setX(double x) {

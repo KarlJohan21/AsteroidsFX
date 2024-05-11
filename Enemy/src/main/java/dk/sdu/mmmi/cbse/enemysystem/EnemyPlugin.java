@@ -29,6 +29,8 @@ public class EnemyPlugin implements IGamePluginService {
         Enemy.setTarget(targetX, targetY);
         Enemy.setShootCounter(100);
         Enemy.setSize(size);
+        Enemy.setRadius(size*2/3);
+        Enemy.setAlive(true);
         return Enemy;
     }
 
