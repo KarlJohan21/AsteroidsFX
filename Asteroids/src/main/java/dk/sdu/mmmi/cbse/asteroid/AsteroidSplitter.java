@@ -19,8 +19,7 @@ public class AsteroidSplitter implements IAsteroidSplitter {
             return;
         }
         double size = e.getSize()/(splits);
-        System.out.println(splits);
-        System.out.println(size);
+
         for (int i = 0; i<splits; i++) {
             Entity asteroid = new Asteroid();
             asteroid.setRadius(size);
